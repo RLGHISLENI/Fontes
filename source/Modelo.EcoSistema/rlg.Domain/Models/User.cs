@@ -12,9 +12,9 @@ namespace rlg.Domain.Models
 
     public User(string name, string email)
     {
-      this.Id = Guid.NewGuid();
-      this.Name = name;
-      this.Email = email;
+      Id = Guid.NewGuid();
+      Name = name;
+      Email = email;
     }
 
     #endregion
@@ -39,6 +39,8 @@ namespace rlg.Domain.Models
       AssertionConcern.AssertArgumentNotNull(confirmPassword, "Confirmação de Senha inválida");
       AssertionConcern.AssertArgumentEquals(password, confirmPassword, "Senha diferente da confirmação");
       AssertionConcern.AssertArgumentLength(password, 6, 20, "Senha inválida");
+
+      Password = PasswordAssertionConcern.Encrypt(password);
     }
 
     #endregion
