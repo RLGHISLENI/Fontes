@@ -1,11 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rlg.Domain", "rlg.Domain\rlg.Domain.csproj", "{494A6B0C-26A7-4722-9C95-A21840B05E9C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rlg.Common", "rlg.Common\rlg.Common.csproj", "{A201BF61-7BD0-4884-BDF8-7B0859AC6A08}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{A53CBF41-7D82-4BD0-9EF9-99D033D49D49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Dommain", "4 - Dommain", "{19C6C664-B950-4BE0-819F-188B83B21E8D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Services", "2 - Services", "{A8BAAF44-D55D-42A6-BF42-E85BBDA9D5FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{949A7BD0-FED6-4A15-8352-AE5C919D2BCF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infra", "5 - Infra", "{62CA75DC-9B18-498F-8CA2-1C31DD3D0239}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{90A71836-A612-4E9A-9298-C11336A0DAF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", "{71A5E90C-8B71-4C7A-95D7-3ED8FF9D39A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +38,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{494A6B0C-26A7-4722-9C95-A21840B05E9C} = {19C6C664-B950-4BE0-819F-188B83B21E8D}
+		{A201BF61-7BD0-4884-BDF8-7B0859AC6A08} = {90A71836-A612-4E9A-9298-C11336A0DAF7}
+		{90A71836-A612-4E9A-9298-C11336A0DAF7} = {62CA75DC-9B18-498F-8CA2-1C31DD3D0239}
+		{71A5E90C-8B71-4C7A-95D7-3ED8FF9D39A6} = {62CA75DC-9B18-498F-8CA2-1C31DD3D0239}
 	EndGlobalSection
 EndGlobal
