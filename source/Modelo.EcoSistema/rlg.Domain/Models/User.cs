@@ -6,7 +6,7 @@ namespace rlg.Domain.Models
   public class User
   {
 
-    #region "  Construtor "
+    #region Construtor
     protected User() { }
     public User(string name, string email)
     {
