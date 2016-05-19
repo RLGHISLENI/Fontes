@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace rlg.Common.Validation
 {
   public class AssertionConcern
   {
+    
+    #region Métodos estáticos
+
     public static void AssertArgumentEquals(object object1, object object2, string message)
     {
       if (!object1.Equals(object2))
@@ -136,6 +135,10 @@ namespace rlg.Common.Validation
       }
     }
 
+    #endregion
+
+    #region Métodos protegidos
+
     protected AssertionConcern()
     {
     }
@@ -214,5 +217,8 @@ namespace rlg.Common.Validation
     {
       AssertionConcern.AssertStateTrue(boolValue, message);
     }
+
+    #endregion
+
   }
 }
