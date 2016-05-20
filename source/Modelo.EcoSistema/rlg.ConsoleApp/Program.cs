@@ -11,9 +11,9 @@ namespace rlg.ConsoleApp
       {
         // Cria usuário e define senha
         Usuario usuario = new Usuario("Robertinho", "beto.ghisleni@gmail.com");
-        usuario.definirSenha("1234567890", "1234567890");
+        usuario.definirSenha("1234567", "1234567");
 
-        // Boas vindas e demonstraçã das informações do usuário
+        // Boas vindas e demonstração das informações do usuário
         Console.WriteLine("Bem Vindo " + usuario.Nome + "!");
         Console.WriteLine("Id: " + usuario.Id );
         Console.WriteLine("Email: " + usuario.Email);
