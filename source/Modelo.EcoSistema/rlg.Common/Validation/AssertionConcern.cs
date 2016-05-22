@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace rlg.Common.Validation
 {
   public class AssertionConcern
   {
+    
+    #region Métodos estáticos
+
     public static void AssertArgumentEquals(object object1, object object2, string message)
     {
       if (!object1.Equals(object2))
@@ -46,9 +45,9 @@ namespace rlg.Common.Validation
       }
     }
 
-    public static void AssertArgumentMatches(string pattern, string stringValue, string message)
+    public static void AssertArgumentMatches(string pattern, RegexOptions regexOptions, string stringValue, string message)
     {
-      Regex regex = new Regex(pattern);
+      Regex regex = new Regex(pattern, regexOptions);
 
       if (!regex.IsMatch(stringValue))
       {
@@ -136,6 +135,10 @@ namespace rlg.Common.Validation
       }
     }
 
+    #endregion
+
+    #region Métodos protegidos
+
     protected AssertionConcern()
     {
     }
@@ -160,9 +163,9 @@ namespace rlg.Common.Validation
       AssertionConcern.AssertArgumentLength(stringValue, minimum, maximum, message);
     }
 
-    protected void SelfAssertArgumentMatches(string pattern, string stringValue, string message)
+    protected void SelfAssertArgumentMatches(string pattern, RegexOptions regexOptions, string stringValue, string message)
     {
-      AssertionConcern.AssertArgumentMatches(pattern, stringValue, message);
+      AssertionConcern.AssertArgumentMatches(pattern, regexOptions, stringValue, message);
     }
 
     protected void SelfAssertArgumentNotEmpty(string stringValue, string message)
@@ -214,5 +217,8 @@ namespace rlg.Common.Validation
     {
       AssertionConcern.AssertStateTrue(boolValue, message);
     }
+
+    #endregion
+
   }
 }
