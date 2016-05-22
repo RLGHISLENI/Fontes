@@ -35,7 +35,8 @@ namespace rlg.Domain.Models
 
     public void definirSenha(string senha, string confirmarSenha)
     {
-      UsuarioScopes.definirSenhaUsuarioEhValido(this, senha, confirmarSenha);
+      Senha = senha;
+      UsuarioScopes.definirSenhaUsuarioEhValido(this, confirmarSenha);
       Senha = PasswordAssertionConcern.Encrypt(senha);
     }
 
@@ -48,15 +49,16 @@ namespace rlg.Domain.Models
 
     public void definirNome(string nome)
     {
-      UsuarioScopes.nomeUsuarioEhValido(this, nome);
       Nome = nome;
+      UsuarioScopes.nomeUsuarioEhValido(this);     
     }
 
-    public void validar()
+    public Boolean ehValido()
     {
-      UsuarioScopes.nomeUsuarioEhValido(this, Nome);
-      UsuarioScopes.emailUsuarioEhValido(this, Email);
-      UsuarioScopes.senhaUsuarioEhValido(this, Senha);
+      UsuarioScopes.nomeUsuarioEhValido(this);
+      UsuarioScopes.emailUsuarioEhValido(this);
+      UsuarioScopes.senhaUsuarioEhValido(this);
+      return true;
     }
 
     #endregion
