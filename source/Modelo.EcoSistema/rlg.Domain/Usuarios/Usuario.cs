@@ -8,11 +8,11 @@ namespace rlg.Domain.Models
 
         #region [  Constantes  ]
 
-        public const int NOME_TAMANHO_MINIMO = 6;
-        public const int NOME_TAMANHO_MAXIMO = 30;
+        public const short NOME_TAMANHO_MINIMO = 6;
+        public const short NOME_TAMANHO_MAXIMO = 35;
 
-        public const int SENHA_TAMANHO_MINIMO = 6;
-        public const int SENHA_TAMANHO_MAXIMO = 20;
+        public const short SENHA_TAMANHO_MINIMO = 4;
+        public const short SENHA_TAMANHO_MAXIMO = 15;
 
         #endregion
 

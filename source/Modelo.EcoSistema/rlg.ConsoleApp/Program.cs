@@ -10,7 +10,6 @@ namespace rlg.ConsoleApp
             var usuarioValido = false;
             do
             {
-
                 try
                 {
                     Console.WriteLine("Informe os dados para o teste");
