@@ -4,22 +4,22 @@ namespace rlg.Domain.Models
 {
     public static class UsuarioScopes
     {
-        public static void definirNomeUsuarioScopesEhValido(this Usuario usuario)
+        internal static void definirNomeUsuarioScopesEhValido(this Usuario usuario)
         {
             AssertionConcern.AssertArgumentLength(usuario.Nome, Usuario.NOME_TAMANHO_MINIMO, Usuario.NOME_TAMANHO_MAXIMO, "Nome do usuário inválido");
         }
 
-        public static void definirEmailUsuarioScopesEhValido(this Usuario usuario)
+        internal static void definirEmailUsuarioScopesEhValido(this Usuario usuario)
         {
             EmailAssertionConcern.AssertIsValid(usuario.Email);
         }
 
-        public static void definirSenhaUsuarioScopesEhValido(this Usuario usuario)
+        internal static void definirSenhaUsuarioScopesEhValido(this Usuario usuario)
         {
             PasswordAssertionConcern.AssertIsValid(usuario.Senha);
         }
 
-        public static void definirSenhaUsuarioScopesEhValido(this Usuario usuario, string confirmarSenha)
+        internal static void definirSenhaUsuarioScopesEhValido(this Usuario usuario, string confirmarSenha)
         {
             definirSenhaUsuarioScopesEhValido(usuario);
             AssertionConcern.AssertArgumentNotNull(confirmarSenha, "Confirmação de Senha inválida");
