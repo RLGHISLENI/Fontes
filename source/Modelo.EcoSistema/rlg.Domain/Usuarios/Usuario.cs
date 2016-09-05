@@ -20,11 +20,12 @@ namespace rlg.Domain.Models
 
         protected Usuario() { }
 
-        public Usuario(string nome, string email)
+        public Usuario(string nome, string email, string senha, string confirmaSenha)
         {
-            Id = Guid.NewGuid();
             definirNome(nome);
-            Email = email;
+            definirEmail(email);
+            definirSenha(senha, confirmaSenha);
+            Id = Guid.NewGuid();
         }
 
         #endregion
@@ -63,13 +64,19 @@ namespace rlg.Domain.Models
             this.definirNomeUsuarioScopesEhValido();
         }
 
-        public bool ehValido()
+        public void definirEmail(string email)
         {
-            this.definirNomeUsuarioScopesEhValido();
+            Email = email;
             this.definirEmailUsuarioScopesEhValido();
-            this.definirSenhaUsuarioScopesEhValido();
-            return true;
         }
+
+        //public bool ehValido()
+        //{
+        //    this.definirNomeUsuarioScopesEhValido();
+        //    this.definirEmailUsuarioScopesEhValido();
+        //    this.definirSenhaUsuarioScopesEhValido();
+        //    return true;
+        //}
 
         #endregion
 
