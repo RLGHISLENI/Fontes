@@ -12,7 +12,7 @@ namespace rlg.Common.Validation
 
         public static string Encrypt(string senha)
         {
-            senha += "|2d331cca-f6c0-40c0-bb43-6e32989c2881";
+            senha += "|1d981cca-f8c0-35c0-bb19-3e85412c6547";
             MD5 md5 = MD5.Create();
             byte[] data = md5.ComputeHash(Encoding.Default.GetBytes(senha));
             StringBuilder sbString = new StringBuilder();
