@@ -12,10 +12,13 @@ namespace rlg.ConsoleApp
             {
                 try
                 {
-                    Console.WriteLine("Informe os dados para o teste");
+                    Console.WriteLine("Informe os dados para o teste (Nome em branco e <Enter> para sair)");
 
                     Console.Write("Nome: ");
                     string nome = Console.ReadLine();
+
+                    if (string.IsNullOrEmpty(nome))
+                        return;
 
                     Console.Write("Email: ");
                     string email = Console.ReadLine();

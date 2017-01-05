@@ -1,4 +1,5 @@
 ﻿using rlg.Common.Validation;
+using rlg.Domain.Usuarios.Resources;
 
 namespace rlg.Domain.Models
 {
@@ -6,7 +7,9 @@ namespace rlg.Domain.Models
     {
         internal static void definirNomeUsuarioScopesEhValido(this Usuario usuario)
         {
-            AssertionConcern.AssertArgumentLength(usuario.Nome, Usuario.NOME_TAMANHO_MINIMO, Usuario.NOME_TAMANHO_MAXIMO, "Nome do usuário inválido");
+            AssertionConcern.AssertArgumentLength(usuario.Nome, 
+                Usuario.NOME_TAMANHO_MINIMO, 
+                Usuario.NOME_TAMANHO_MAXIMO, UsuarioResource.NomeInvalido);
         }
 
         internal static void definirEmailUsuarioScopesEhValido(this Usuario usuario)
@@ -22,9 +25,22 @@ namespace rlg.Domain.Models
         internal static void definirSenhaUsuarioScopesEhValido(this Usuario usuario, string confirmarSenha)
         {
             definirSenhaUsuarioScopesEhValido(usuario);
-            AssertionConcern.AssertArgumentNotNull(confirmarSenha, "Confirmação de Senha inválida");
-            AssertionConcern.AssertArgumentEquals(usuario.Senha, confirmarSenha, "Senha diferente da confirmação");
-            AssertionConcern.AssertArgumentLength(usuario.Senha, Usuario.SENHA_TAMANHO_MINIMO, Usuario.SENHA_TAMANHO_MAXIMO, "Senha deve conter no mínimo 6 e no máximo 20 caracteres.");
+
+            AssertionConcern.AssertArgumentNotNull(confirmarSenha, 
+                UsuarioResource.SenhaNaoConfirmada);
+
+            AssertionConcern.AssertArgumentEquals(usuario.Senha, 
+                confirmarSenha, 
+                UsuarioResource.SenhaDiferente);
+
+            AssertionConcern.AssertArgumentLength(usuario.Senha, 
+                Usuario.SENHA_TAMANHO_MINIMO, 
+                Usuario.SENHA_TAMANHO_MAXIMO, 
+                string.Format(UsuarioResource.SenhaInvalida, new object[] {
+                    Usuario.SENHA_TAMANHO_MINIMO,
+                    Usuario.SENHA_TAMANHO_MAXIMO
+                }
+            ));
         }
 
     }

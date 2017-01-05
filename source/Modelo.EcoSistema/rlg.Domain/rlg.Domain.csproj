@@ -39,6 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Usuarios\Resources\UsuarioResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsuarioResource.resx</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuarios\UsuarioScopes.cs" />
@@ -48,6 +53,12 @@
       <Project>{a201bf61-7bd0-4884-bdf8-7b0859ac6a08}</Project>
       <Name>rlg.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Usuarios\Resources\UsuarioResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UsuarioResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
