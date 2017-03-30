@@ -12,6 +12,10 @@ namespace rlg.ConsoleApp
             {
                 try
                 {
+                    // Teste de visibilidade
+                    Pedido pedido = new Pedido(Guid.NewGuid());
+                    //pedido.AdicionarItem()
+
                     Console.WriteLine("Informe os dados para o teste (Nome em branco e <Enter> para sair)");
 
                     Console.Write("Nome: ");
